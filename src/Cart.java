@@ -1,3 +1,13 @@
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
+import net.proteanit.sql.DbUtils;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -14,14 +24,33 @@ public class Cart extends javax.swing.JFrame {
      */
     public Cart() {
         initComponents();
+        pnlTable.setVisible(false);
     }
     public Cart(String user){
         initComponents();
         lblUser.setText(user);
         btnLogin.setVisible(false);
         btnProfile.setVisible(false);
+        updateTable();
     }
-
+    
+    public void updateTable(){
+        Connection con;
+        MyConnector mcon = new MyConnector();
+        con = mcon.connectionMaker();
+        String sqlquery = "Select * from NewCart";
+        Statement stmt;
+        ResultSet rs;
+        try {
+            stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
+            rs = stmt.executeQuery(sqlquery);
+            tblCart.setModel(DbUtils.resultSetToTableModel(rs));
+            rs.close();
+            con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(Cart.class.getName()).log(Level.SEVERE, null, ex);
+        }       
+    }   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -31,6 +60,7 @@ public class Cart extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
         btnCart = new javax.swing.JButton();
         btnLogin = new javax.swing.JButton();
         btnProfile = new javax.swing.JButton();
@@ -41,12 +71,20 @@ public class Cart extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         lblMyCart = new javax.swing.JLabel();
         btnHome = new javax.swing.JButton();
+        pnlTable = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblCart = new javax.swing.JTable();
+        btnDeleteRow = new javax.swing.JButton();
+        btnClear = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jLabel69 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         lblEmotyCart = new javax.swing.JLabel();
         lblEmptyCart1 = new javax.swing.JLabel();
         lblEmptyCart2 = new javax.swing.JLabel();
         btnContinueShop = new javax.swing.JButton();
+
+        jButton1.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(850, 580));
@@ -140,6 +178,69 @@ public class Cart extends javax.swing.JFrame {
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 70, 850, 60);
 
+        tblCart.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tblCart.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tblCartKeyPressed(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tblCart);
+
+        btnDeleteRow.setText("Delete Item");
+        btnDeleteRow.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteRowActionPerformed(evt);
+            }
+        });
+
+        btnClear.setText("Clear List");
+        btnClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("CheckOut");
+
+        javax.swing.GroupLayout pnlTableLayout = new javax.swing.GroupLayout(pnlTable);
+        pnlTable.setLayout(pnlTableLayout);
+        pnlTableLayout.setHorizontalGroup(
+            pnlTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 850, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlTableLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnClear)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnDeleteRow)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton2)
+                .addGap(22, 22, 22))
+        );
+        pnlTableLayout.setVerticalGroup(
+            pnlTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlTableLayout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnDeleteRow)
+                    .addComponent(btnClear)
+                    .addComponent(jButton2))
+                .addGap(0, 31, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(pnlTable);
+        pnlTable.setBounds(0, 130, 850, 370);
+
         jLabel69.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ContactDetails.png"))); // NOI18N
         getContentPane().add(jLabel69);
         jLabel69.setBounds(30, 510, 780, 30);
@@ -226,6 +327,24 @@ public class Cart extends javax.swing.JFrame {
         setVisible(false);
     }//GEN-LAST:event_btnLoginActionPerformed
 
+    private void tblCartKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tblCartKeyPressed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_tblCartKeyPressed
+
+    private void btnDeleteRowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteRowActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) tblCart.getModel();
+        int RowIndex = tblCart.getSelectedRow();
+        model.removeRow(RowIndex);
+    }//GEN-LAST:event_btnDeleteRowActionPerformed
+
+    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) tblCart.getModel();
+        model.setRowCount(0);
+    }//GEN-LAST:event_btnClearActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -263,20 +382,27 @@ public class Cart extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCart;
+    private javax.swing.JButton btnClear;
     private javax.swing.JButton btnContinueShop;
+    private javax.swing.JButton btnDeleteRow;
     private javax.swing.JButton btnHome;
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnProfile;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblEmotyCart;
     private javax.swing.JLabel lblEmptyCart1;
     private javax.swing.JLabel lblEmptyCart2;
     private javax.swing.JLabel lblMyCart;
     private javax.swing.JLabel lblUser;
+    private javax.swing.JPanel pnlTable;
+    private javax.swing.JTable tblCart;
     // End of variables declaration//GEN-END:variables
 }

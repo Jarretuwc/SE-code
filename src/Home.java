@@ -15,6 +15,7 @@ public class Home extends javax.swing.JFrame {
     public Home() {
         initComponents();
     }
+    //initialises the home frame to start the app
      public Home(String user){
         initComponents();
         lblUser.setText(user);
@@ -56,9 +57,9 @@ public class Home extends javax.swing.JFrame {
         lblDrill1_name = new javax.swing.JLabel();
         lblDrill1_price = new javax.swing.JLabel();
         pnlHammer3 = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
+        lblHammer3_pic = new javax.swing.JLabel();
+        lblHammer3_name = new javax.swing.JLabel();
+        lblHammer3_price = new javax.swing.JLabel();
         pnlHammer2 = new javax.swing.JPanel();
         lblHammer2_pic = new javax.swing.JLabel();
         lblHammer2_name = new javax.swing.JLabel();
@@ -112,16 +113,16 @@ public class Home extends javax.swing.JFrame {
         lblPliers3_name = new javax.swing.JLabel();
         lblPliers3_price = new javax.swing.JLabel();
         pnlBaN1 = new javax.swing.JPanel();
-        jLabel45 = new javax.swing.JLabel();
-        jLabel60 = new javax.swing.JLabel();
+        lblBaN_pic = new javax.swing.JLabel();
+        lblBaN_name = new javax.swing.JLabel();
         jLabel61 = new javax.swing.JLabel();
         pnlBaN2 = new javax.swing.JPanel();
-        jLabel46 = new javax.swing.JLabel();
-        jLabel62 = new javax.swing.JLabel();
+        lblBaN2_pic = new javax.swing.JLabel();
+        lblBaN2_name = new javax.swing.JLabel();
         jLabel63 = new javax.swing.JLabel();
         pnlBaN3 = new javax.swing.JPanel();
-        jLabel47 = new javax.swing.JLabel();
-        jLabel64 = new javax.swing.JLabel();
+        lblBaN3_pic = new javax.swing.JLabel();
+        lblBaN3_name = new javax.swing.JLabel();
         jLabel65 = new javax.swing.JLabel();
         jLabel67 = new javax.swing.JLabel();
         jLabel69 = new javax.swing.JLabel();
@@ -176,7 +177,7 @@ public class Home extends javax.swing.JFrame {
         getContentPane().add(jLabel68);
         jLabel68.setBounds(10, 10, 110, 70);
 
-        lblUser.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblUser.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblUser.setForeground(new java.awt.Color(204, 0, 0));
         getContentPane().add(lblUser);
         lblUser.setBounds(630, 20, 140, 40);
@@ -260,7 +261,12 @@ public class Home extends javax.swing.JFrame {
         pnlDrill1.setPreferredSize(new java.awt.Dimension(244, 288));
 
         lblDrill1_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dewalt_brushless_hammer_drill_R4150_179x180.jpg"))); // NOI18N
-        lblDrill1_pic.setName("ewalt_brushless_hammer_drill_R4150_179x180.jpg"); // NOI18N
+        lblDrill1_pic.setName("Dewalt_brushless_hammer_drill_R4150_179x180.jpg"); // NOI18N
+        lblDrill1_pic.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblDrill1_picMouseClicked(evt);
+            }
+        });
 
         lblDrill1_name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblDrill1_name.setText("DeWalt Hammer Drill");
@@ -295,14 +301,19 @@ public class Home extends javax.swing.JFrame {
         pnlHammer3.setBackground(new java.awt.Color(255, 153, 51));
         pnlHammer3.setPreferredSize(new java.awt.Dimension(235, 300));
 
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Screenshot_2023-09-05_161147_179x180.png"))); // NOI18N
-        jLabel13.setName("Screenshot_2023-09-05_161147_179x180.png"); // NOI18N
+        lblHammer3_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Screenshot_2023-09-05_161147_179x180.png"))); // NOI18N
+        lblHammer3_pic.setName("Screenshot_2023-09-05_161147_179x180.png"); // NOI18N
+        lblHammer3_pic.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblHammer3_picMouseClicked(evt);
+            }
+        });
 
-        jLabel18.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel18.setText("Grip Brick Chisel Hammer");
+        lblHammer3_name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblHammer3_name.setText("Grip Brick Chisel Hammer");
 
-        jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel19.setText("R439.99");
+        lblHammer3_price.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblHammer3_price.setText("R439.99");
 
         javax.swing.GroupLayout pnlHammer3Layout = new javax.swing.GroupLayout(pnlHammer3);
         pnlHammer3.setLayout(pnlHammer3Layout);
@@ -311,23 +322,23 @@ public class Home extends javax.swing.JFrame {
             .addGroup(pnlHammer3Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(pnlHammer3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel19)
-                    .addComponent(jLabel18))
+                    .addComponent(lblHammer3_price)
+                    .addComponent(lblHammer3_name))
                 .addContainerGap(54, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlHammer3Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(jLabel13)
+                .addComponent(lblHammer3_pic)
                 .addGap(23, 23, 23))
         );
         pnlHammer3Layout.setVerticalGroup(
             pnlHammer3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlHammer3Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addComponent(jLabel13)
+                .addComponent(lblHammer3_pic)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel18)
+                .addComponent(lblHammer3_name)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel19)
+                .addComponent(lblHammer3_price)
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
@@ -336,6 +347,11 @@ public class Home extends javax.swing.JFrame {
 
         lblHammer2_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/milwaukee_hammer_R599_179x180.jpg"))); // NOI18N
         lblHammer2_pic.setName("milwaukee_hammer_R599_179x180.jpg"); // NOI18N
+        lblHammer2_pic.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblHammer2_picMouseClicked(evt);
+            }
+        });
 
         lblHammer2_name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblHammer2_name.setText("Milwaukee Clawed Hammer");
@@ -380,7 +396,12 @@ public class Home extends javax.swing.JFrame {
         pnlDrill3.setPreferredSize(new java.awt.Dimension(244, 288));
 
         lblDrill3_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CAT_Rotary-Hammer_1500W_R3495.00_1_179x180.png"))); // NOI18N
-        lblDrill3_pic.setName("AT_Rotary-Hammer_1500W_R3495.00_1_179x180.png"); // NOI18N
+        lblDrill3_pic.setName("CAT_Rotary-Hammer_1500W_R3495.00_1_179x180.png"); // NOI18N
+        lblDrill3_pic.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblDrill3_picMouseClicked(evt);
+            }
+        });
 
         lblDrill3_name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblDrill3_name.setText("CAT Rotary Hammer 1500W");
@@ -417,7 +438,12 @@ public class Home extends javax.swing.JFrame {
         pnlDrill2.setPreferredSize(new java.awt.Dimension(244, 288));
 
         lblDrill2_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/makita_impact_drill_710W_R1699.99_179x180.jpg"))); // NOI18N
-        lblDrill2_pic.setName("akita_impact_drill_710W_R1699.99_179x180.jpg"); // NOI18N
+        lblDrill2_pic.setName("Makita_impact_drill_710W_R1699.99_179x180.jpg"); // NOI18N
+        lblDrill2_pic.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblDrill2_picMouseClicked(evt);
+            }
+        });
 
         lblDrill2_name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblDrill2_name.setText("Makita Impact Drill 710W");
@@ -453,7 +479,12 @@ public class Home extends javax.swing.JFrame {
         pnlScrewDriver1.setPreferredSize(new java.awt.Dimension(244, 288));
 
         lblScrew1_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Stahlwille_7pc_screwdriver_set_R1990.00_1_179x180.jpg"))); // NOI18N
-        lblScrew1_pic.setName("tahlwille_7pc_screwdriver_set_R1990.00_1_179x180.jpg"); // NOI18N
+        lblScrew1_pic.setName("Stahlwille_7pc_screwdriver_set_R1990.00_1_179x180.jpg"); // NOI18N
+        lblScrew1_pic.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblScrew1_picMouseClicked(evt);
+            }
+        });
 
         lblScrew1_name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblScrew1_name.setText("Stahlwille 7pc Screwdriver Set");
@@ -489,7 +520,12 @@ public class Home extends javax.swing.JFrame {
         pnlScrewDriver2.setPreferredSize(new java.awt.Dimension(244, 288));
 
         lblScrew2_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/stanley_stubby_multibit_screwdriver_R679.99_179x180.jpg"))); // NOI18N
-        lblScrew2_pic.setName("tanley_stubby_multibit_screwdriver_R679.99_179x180.jpg"); // NOI18N
+        lblScrew2_pic.setName("Stanley_stubby_multibit_screwdriver_R679.99_179x180.jpg"); // NOI18N
+        lblScrew2_pic.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblScrew2_picMouseClicked(evt);
+            }
+        });
 
         lblScrew2_name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblScrew2_name.setText("Stanley Multibit Screwdriver");
@@ -525,7 +561,12 @@ public class Home extends javax.swing.JFrame {
         pnlScrewDriver3.setPreferredSize(new java.awt.Dimension(244, 288));
 
         lblScrew3_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/milwaukee_8pc_screwdriver_set_R630_179x180.jpg"))); // NOI18N
-        lblScrew3_pic.setName("ilwaukee_8pc_screwdriver_set_R630_179x180.jpg"); // NOI18N
+        lblScrew3_pic.setName("Milwaukee_8pc_screwdriver_set_R630_179x180.jpg"); // NOI18N
+        lblScrew3_pic.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblScrew3_picMouseClicked(evt);
+            }
+        });
 
         lblScrew3_name.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         lblScrew3_name.setText("Milwaukee 8pc Screwdriver Set");
@@ -565,7 +606,12 @@ public class Home extends javax.swing.JFrame {
         pnlSpanner1.setPreferredSize(new java.awt.Dimension(244, 288));
 
         lblSpanner1_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/STAHLWILLE_COMBI_SPANNERS_R260_179x180.jpg"))); // NOI18N
-        lblSpanner1_pic.setName("TAHLWILLE_COMBI_SPANNERS_R260_179x180.jpg"); // NOI18N
+        lblSpanner1_pic.setName("STAHLWILLE_COMBI_SPANNERS_R260_179x180.jpg"); // NOI18N
+        lblSpanner1_pic.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblSpanner1_picMouseClicked(evt);
+            }
+        });
 
         lblSpanner1_name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblSpanner1_name.setText("Stahwille Combi Spanner");
@@ -601,7 +647,12 @@ public class Home extends javax.swing.JFrame {
         pnlSpanner2.setPreferredSize(new java.awt.Dimension(244, 288));
 
         lblSpanner2_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/stanley_ratchet_spanner_R150_179x180.jpg"))); // NOI18N
-        lblSpanner2_pic.setName("tanley_ratchet_spanner_R150_179x180.jpg"); // NOI18N
+        lblSpanner2_pic.setName("Stanley_ratchet_spanner_R150_179x180.jpg"); // NOI18N
+        lblSpanner2_pic.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblSpanner2_picMouseClicked(evt);
+            }
+        });
 
         lblSpanner2_name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblSpanner2_name.setText("Stanley Ratchet Spanner");
@@ -637,7 +688,12 @@ public class Home extends javax.swing.JFrame {
         pnlSpanner3.setPreferredSize(new java.awt.Dimension(244, 288));
 
         lblSpanner3_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Stahlwille_Tube_Spanner_Sets_R2080_179x180.jpg"))); // NOI18N
-        lblSpanner3_pic.setName("tahlwille_Tube_Spanner_Sets_R2080_179x180.jpg"); // NOI18N
+        lblSpanner3_pic.setName("Stahlwille_Tube_Spanner_Sets_R2080_179x180.jpg"); // NOI18N
+        lblSpanner3_pic.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblSpanner3_picMouseClicked(evt);
+            }
+        });
 
         lblSpanner3_name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblSpanner3_name.setText("Stahlwille Tube Spanner Set");
@@ -673,7 +729,12 @@ public class Home extends javax.swing.JFrame {
         pnlPliers1.setPreferredSize(new java.awt.Dimension(244, 288));
 
         lblPliers1_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/king_tony_long_nose_pliers_R290_179x180.jpg"))); // NOI18N
-        lblPliers1_pic.setName("ing_tony_long_nose_pliers_R290_179x180.jpg"); // NOI18N
+        lblPliers1_pic.setName("King_tony_long_nose_pliers_R290_179x180.jpg"); // NOI18N
+        lblPliers1_pic.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblPliers1_picMouseClicked(evt);
+            }
+        });
 
         lblPliers1_name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblPliers1_name.setText("King Tony Long Nose Pliers");
@@ -709,7 +770,12 @@ public class Home extends javax.swing.JFrame {
         pnlPliers2.setPreferredSize(new java.awt.Dimension(244, 288));
 
         lblPliers2_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Stanley_Mini_side_cutters_100_R110_179x180.jpg"))); // NOI18N
-        lblPliers2_pic.setName("tanley_Mini_side_cutters_100_R110_179x180.jpg"); // NOI18N
+        lblPliers2_pic.setName("Stanley_Mini_side_cutters_100_R110_179x180.jpg"); // NOI18N
+        lblPliers2_pic.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblPliers2_picMouseClicked(evt);
+            }
+        });
 
         lblPliers2_name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblPliers2_name.setText("Stanley Mini Side Cutters");
@@ -745,7 +811,12 @@ public class Home extends javax.swing.JFrame {
         pnlPliers3.setPreferredSize(new java.awt.Dimension(244, 288));
 
         lblPliers3_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ridgid_water_pump_pliers_R695_1_179x180.jpg"))); // NOI18N
-        lblPliers3_pic.setName("idgid_water_pump_pliers_R695_1_179x180.jpg"); // NOI18N
+        lblPliers3_pic.setName("Ridgid_water_pump_pliers_R695_1_179x180.jpg"); // NOI18N
+        lblPliers3_pic.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblPliers3_picMouseClicked(evt);
+            }
+        });
 
         lblPliers3_name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblPliers3_name.setText("Ridgid Water Pump Pliers ");
@@ -786,11 +857,16 @@ public class Home extends javax.swing.JFrame {
         pnlBaN1.setBackground(new java.awt.Color(255, 153, 51));
         pnlBaN1.setPreferredSize(new java.awt.Dimension(244, 288));
 
-        jLabel45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Screenshot_2023-09-05_164900_179x180m1.png"))); // NOI18N
-        jLabel45.setName("creenshot_2023-09-05_164900_179x180m1.png"); // NOI18N
+        lblBaN_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Screenshot_2023-09-05_164900_179x180m1.png"))); // NOI18N
+        lblBaN_pic.setName("Screenshot_2023-09-05_164900_179x180m1.png"); // NOI18N
+        lblBaN_pic.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblBaN_picMouseClicked(evt);
+            }
+        });
 
-        jLabel60.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel60.setText("Stanley 0-34-108Tape Measure");
+        lblBaN_name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblBaN_name.setText("Stanley 0-34-108Tape Measure");
 
         jLabel61.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel61.setText("R429.00");
@@ -802,8 +878,8 @@ public class Home extends javax.swing.JFrame {
             .addGroup(pnlBaN1Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addGroup(pnlBaN1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel60)
-                    .addComponent(jLabel45)
+                    .addComponent(lblBaN_name)
+                    .addComponent(lblBaN_pic)
                     .addComponent(jLabel61))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
@@ -811,9 +887,9 @@ public class Home extends javax.swing.JFrame {
             pnlBaN1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlBaN1Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addComponent(jLabel45)
+                .addComponent(lblBaN_pic)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel60)
+                .addComponent(lblBaN_name)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel61)
                 .addContainerGap(27, Short.MAX_VALUE))
@@ -822,11 +898,16 @@ public class Home extends javax.swing.JFrame {
         pnlBaN2.setBackground(new java.awt.Color(255, 153, 51));
         pnlBaN2.setPreferredSize(new java.awt.Dimension(244, 288));
 
-        jLabel46.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Screenshot_2023-09-05_164911_179x180m2.png"))); // NOI18N
-        jLabel46.setName("creenshot_2023-09-05_164911_179x180m2.png"); // NOI18N
+        lblBaN2_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Screenshot_2023-09-05_164911_179x180m2.png"))); // NOI18N
+        lblBaN2_pic.setName("Screenshot_2023-09-05_164911_179x180m2.png"); // NOI18N
+        lblBaN2_pic.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblBaN2_picMouseClicked(evt);
+            }
+        });
 
-        jLabel62.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel62.setText("Stanley Fiberglass Tape Measure");
+        lblBaN2_name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblBaN2_name.setText("Stanley Fiberglass Tape Measure");
 
         jLabel63.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel63.setText("R499.99");
@@ -839,17 +920,17 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap(25, Short.MAX_VALUE)
                 .addGroup(pnlBaN2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel46)
-                    .addComponent(jLabel62, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblBaN2_pic)
+                    .addComponent(lblBaN2_name, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20))
         );
         pnlBaN2Layout.setVerticalGroup(
             pnlBaN2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlBaN2Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addComponent(jLabel46)
+                .addComponent(lblBaN2_pic)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel62)
+                .addComponent(lblBaN2_name)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel63)
                 .addContainerGap(27, Short.MAX_VALUE))
@@ -858,11 +939,16 @@ public class Home extends javax.swing.JFrame {
         pnlBaN3.setBackground(new java.awt.Color(255, 153, 51));
         pnlBaN3.setPreferredSize(new java.awt.Dimension(244, 288));
 
-        jLabel47.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Screenshot_2023-09-05_164920_179x180m3.png"))); // NOI18N
-        jLabel47.setName("creenshot_2023-09-05_164920_179x180m3.png"); // NOI18N
+        lblBaN3_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Screenshot_2023-09-05_164920_179x180m3.png"))); // NOI18N
+        lblBaN3_pic.setName("Screenshot_2023-09-05_164920_179x180m3.png"); // NOI18N
+        lblBaN3_pic.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblBaN3_picMouseClicked(evt);
+            }
+        });
 
-        jLabel64.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel64.setText("Ross Builders Square");
+        lblBaN3_name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblBaN3_name.setText("Ross Builders Square");
 
         jLabel65.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel65.setText("R160.00");
@@ -874,8 +960,8 @@ public class Home extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBaN3Layout.createSequentialGroup()
                 .addContainerGap(31, Short.MAX_VALUE)
                 .addGroup(pnlBaN3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel47)
-                    .addComponent(jLabel64)
+                    .addComponent(lblBaN3_pic)
+                    .addComponent(lblBaN3_name)
                     .addComponent(jLabel65))
                 .addGap(20, 20, 20))
         );
@@ -883,9 +969,9 @@ public class Home extends javax.swing.JFrame {
             pnlBaN3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlBaN3Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addComponent(jLabel47)
+                .addComponent(lblBaN3_pic)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel64)
+                .addComponent(lblBaN3_name)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel65)
                 .addContainerGap(27, Short.MAX_VALUE))
@@ -1027,7 +1113,7 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        // TODO add your handling code here:
+        // creates login frame and focus it
         LoginForm lf= new LoginForm();
         lf.setVisible(true);
         dispose();
@@ -1039,7 +1125,7 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_pnlHammer1MouseClicked
 
     private void btnCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartActionPerformed
-        // TODO add your handling code here:
+        // Creates the cart frame and focuses it
         if (btnLogin.isVisible()){
            Cart c =new Cart();
            c.setVisible(true);
@@ -1051,27 +1137,168 @@ public class Home extends javax.swing.JFrame {
            setVisible(false);
         }
     }//GEN-LAST:event_btnCartActionPerformed
+    //Extention to everything below. Checks if the user has logged in
+    public String CheckbtnLogin(){
+        if (btnLogin.isVisible()) {
+            return null;
+        } else {
+            return lblUser.getText();
+        }
+    }
+    // Extention of the everything below. recusive call to create the frame
+    public void createDescription(String itemName, String nameURL){
+        HammerDescription hd =new HammerDescription(CheckbtnLogin(),nameURL,itemName);
+        hd.setVisible(true);
+        setVisible(false);    
+    }
     
+    //Everything private below creates the next description frame and sends the name and iconURL of the selected tool to be displayed to the new frame class.
     private void lblHammer1_picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHammer1_picMouseClicked
         // TODO add your handling code here:
-        if (btnLogin.isVisible()){
-           String user =lblUser.getText();
-           String itemName = lblHammer1_name.getText();
-           String nameURL = lblHammer1_pic.getName();
-           setName(nameURL);
-           HammerDescription hd =new HammerDescription(user,nameURL,itemName);
-           hd.setVisible(true);
-           setVisible(false);            
-        }else{
-           String user =lblUser.getText();
-           String nameURL = lblHammer1_pic.getName();
-           String itemName = lblHammer1_name.getText();
-           setName(nameURL);
-           HammerDescription hd = new HammerDescription(user,nameURL,itemName);
-           hd.setVisible(true);
-           setVisible(false);           
-        }
+        String itemName = lblHammer1_name.getText();
+        String nameURL = lblHammer1_pic.getName();
+        setName(nameURL);
+        createDescription(itemName, nameURL);
+          
     }//GEN-LAST:event_lblHammer1_picMouseClicked
+
+    private void lblHammer2_picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHammer2_picMouseClicked
+        // TODO add your handling code here:
+        String itemName = lblHammer2_name.getText();
+        String nameURL = lblHammer2_pic.getName();
+        setName(nameURL);
+        createDescription(itemName, nameURL);
+    }//GEN-LAST:event_lblHammer2_picMouseClicked
+
+    private void lblHammer3_picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHammer3_picMouseClicked
+        // TODO add your handling code here:
+        String itemName = lblHammer3_name.getText();
+        String nameURL = lblHammer3_pic.getName();
+        setName(nameURL);
+        createDescription(itemName, nameURL);
+    }//GEN-LAST:event_lblHammer3_picMouseClicked
+
+    private void lblDrill1_picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblDrill1_picMouseClicked
+        // TODO add your handling code here:
+        String itemName = lblDrill1_name.getText();
+        String nameURL = lblDrill1_pic.getName();
+        setName(nameURL);
+        createDescription(itemName, nameURL);
+    }//GEN-LAST:event_lblDrill1_picMouseClicked
+
+    private void lblDrill3_picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblDrill3_picMouseClicked
+        // TODO add your handling code here:
+        String itemName = lblDrill3_name.getText();
+        String nameURL = lblDrill3_pic.getName();
+        setName(nameURL);
+        createDescription(itemName, nameURL);
+    }//GEN-LAST:event_lblDrill3_picMouseClicked
+
+    private void lblDrill2_picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblDrill2_picMouseClicked
+        // TODO add your handling code here:
+        String itemName = lblDrill2_name.getText();
+        String nameURL = lblDrill2_pic.getName();
+        setName(nameURL);
+        createDescription(itemName, nameURL);
+    }//GEN-LAST:event_lblDrill2_picMouseClicked
+
+    private void lblScrew1_picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblScrew1_picMouseClicked
+        // TODO add your handling code here:
+        String itemName = lblScrew1_name.getText();
+        String nameURL = lblScrew1_pic.getName();
+        setName(nameURL);
+        createDescription(itemName, nameURL);
+    }//GEN-LAST:event_lblScrew1_picMouseClicked
+
+    private void lblScrew2_picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblScrew2_picMouseClicked
+        // TODO add your handling code here:
+        String itemName = lblScrew2_name.getText();
+        String nameURL = lblScrew2_pic.getName();
+        setName(nameURL);
+        createDescription(itemName, nameURL);
+    }//GEN-LAST:event_lblScrew2_picMouseClicked
+
+    private void lblScrew3_picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblScrew3_picMouseClicked
+        // TODO add your handling code here:
+        String itemName = lblScrew3_name.getText();
+        String nameURL = lblScrew3_pic.getName();
+        setName(nameURL);
+        createDescription(itemName, nameURL);
+    }//GEN-LAST:event_lblScrew3_picMouseClicked
+
+    private void lblSpanner1_picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSpanner1_picMouseClicked
+        // TODO add your handling code here:
+        String itemName = lblSpanner1_name.getText();
+        String nameURL = lblSpanner1_pic.getName();
+        setName(nameURL);
+        createDescription(itemName, nameURL);
+    }//GEN-LAST:event_lblSpanner1_picMouseClicked
+
+    private void lblSpanner2_picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSpanner2_picMouseClicked
+        // TODO add your handling code here:
+        String itemName = lblSpanner2_name.getText();
+        String nameURL = lblSpanner2_pic.getName();
+        setName(nameURL);
+        createDescription(itemName, nameURL);
+    }//GEN-LAST:event_lblSpanner2_picMouseClicked
+
+    private void lblSpanner3_picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSpanner3_picMouseClicked
+        // TODO add your handling code here:
+        String itemName = lblSpanner3_name.getText();
+        String nameURL = lblSpanner3_pic.getName();
+        setName(nameURL);
+        createDescription(itemName, nameURL);
+    }//GEN-LAST:event_lblSpanner3_picMouseClicked
+
+    private void lblPliers1_picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPliers1_picMouseClicked
+        // TODO add your handling code here:
+        String itemName = lblPliers1_name.getText();
+        String nameURL = lblPliers1_pic.getName();
+        setName(nameURL);
+        createDescription(itemName, nameURL);
+    }//GEN-LAST:event_lblPliers1_picMouseClicked
+
+    private void lblPliers2_picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPliers2_picMouseClicked
+        // TODO add your handling code here:
+        String itemName = lblPliers2_name.getText();
+        String nameURL = lblPliers2_pic.getName();
+        setName(nameURL);
+        createDescription(itemName, nameURL);
+    }//GEN-LAST:event_lblPliers2_picMouseClicked
+
+    private void lblPliers3_picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPliers3_picMouseClicked
+        // TODO add your handling code here:
+        String itemName = lblPliers3_name.getText();
+        String nameURL = lblPliers3_pic.getName();
+        setName(nameURL);
+        createDescription(itemName, nameURL);
+    }//GEN-LAST:event_lblPliers3_picMouseClicked
+
+    private void lblBaN_picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBaN_picMouseClicked
+        // TODO add your handling code here:
+        String itemName = lblBaN_name.getText();
+        String nameURL = lblBaN_pic.getName();
+        setName(nameURL);
+        createDescription(itemName, nameURL);
+    }//GEN-LAST:event_lblBaN_picMouseClicked
+
+    private void lblBaN2_picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBaN2_picMouseClicked
+        // TODO add your handling code here:
+        String itemName = lblBaN2_name.getText();
+        String nameURL = lblBaN2_pic.getName();
+        setName(nameURL);
+        createDescription(itemName, nameURL);
+    }//GEN-LAST:event_lblBaN2_picMouseClicked
+
+    private void lblBaN3_picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBaN3_picMouseClicked
+        // TODO add your handling code here:
+        String itemName = lblBaN3_name.getText();
+        String nameURL = lblBaN3_pic.getName();
+        setName(nameURL);
+        createDescription(itemName, nameURL);
+    }//GEN-LAST:event_lblBaN3_picMouseClicked
+    
+    
     private String name = "";
     public String getName(){
         return name;
@@ -1122,23 +1349,14 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
-    private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel63;
-    private javax.swing.JLabel jLabel64;
     private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel67;
     private javax.swing.JLabel jLabel68;
@@ -1148,6 +1366,12 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel lblBaN2_name;
+    private javax.swing.JLabel lblBaN2_pic;
+    private javax.swing.JLabel lblBaN3_name;
+    private javax.swing.JLabel lblBaN3_pic;
+    private javax.swing.JLabel lblBaN_name;
+    private javax.swing.JLabel lblBaN_pic;
     private javax.swing.JLabel lblDrill1_name;
     private javax.swing.JLabel lblDrill1_pic;
     private javax.swing.JLabel lblDrill1_price;
@@ -1163,6 +1387,9 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel lblHammer2_name;
     private javax.swing.JLabel lblHammer2_pic;
     private javax.swing.JLabel lblHammer2_price;
+    private javax.swing.JLabel lblHammer3_name;
+    private javax.swing.JLabel lblHammer3_pic;
+    private javax.swing.JLabel lblHammer3_price;
     private javax.swing.JLabel lblPliers1_name;
     private javax.swing.JLabel lblPliers1_pic;
     private javax.swing.JLabel lblPliers1_price;

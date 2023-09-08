@@ -25,6 +25,7 @@ public class HammerDescription extends javax.swing.JFrame {
     public HammerDescription() {
         initComponents();
     }
+    //initialises the description frame. Uses the data passed from Home frame to call for the approriate information from the database
      public HammerDescription(String user, String nameURL, String itemName){
         initComponents();
         lblUser.setText(user);
@@ -33,16 +34,16 @@ public class HammerDescription extends javax.swing.JFrame {
             btnProfile.setVisible(false);
         }              
         lblName.setText(itemName);
-         ConfigureAll(nameURL);
+        System.out.println(nameURL);
+        ConfigureAll(nameURL);
     }
+    //Uses the data passed from the home page to find the appropriate image and searches the database for the correct product information 
     public void ConfigureAll(String url){
-        ImageIcon icon = new ImageIcon("C:\\Users\\Jarret\\Documents\\NetBeansProjects\\BuiltDifferent2.0\\src\\stanley_ball_pein_hammer_340g_179x180.jpg");
+        ImageIcon icon = new ImageIcon("C:\\Users\\Jarret\\Documents\\NetBeansProjects\\BuiltDifferent2.0\\src\\" + url);
         lblHammerpic.setIcon(icon);
         
         String ProductName = url.substring(0,url.length() - 4);
-        String names = "";
-        String Description = "";
-        String Price = "";
+        
         ResultSet rs;  
         MyConnector mcon = new MyConnector();
         Connection con = mcon.connectionMaker();
@@ -50,14 +51,16 @@ public class HammerDescription extends javax.swing.JFrame {
             Statement stmt = con.createStatement();
             rs = stmt.executeQuery("SELECT * FROM Products");
             while (rs.next()) {                
-                names = rs.getString(1);
-                Description = rs.getString(2);
-                Price = rs.getString(3);
+                String names = rs.getString(1);
+                String Description = rs.getString(2);
+                String Price = rs.getString(3);
+                String rating = rs.getString(5);
                 if (names.equals(ProductName)) {
-                    System.out.println("true");
+                    //System.out.println("true");
                     //lblName.setText(names);
                     lblDescription.setText(Description);
                     lblPrice.setText("R"+Price);
+                    lblReview.setText(rating);
                 }
             }
             rs.close();
@@ -103,7 +106,7 @@ public class HammerDescription extends javax.swing.JFrame {
         lblReview = new javax.swing.JLabel();
         lblDescription = new javax.swing.JLabel();
         lblName = new javax.swing.JLabel();
-        jSpinner1 = new javax.swing.JSpinner();
+        jSpinQuantity = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(846, 580));
@@ -247,6 +250,8 @@ public class HammerDescription extends javax.swing.JFrame {
 
         lblName.setText("Stanley Ballpein Hammer 340g");
 
+        jSpinQuantity.setModel(new javax.swing.SpinnerNumberModel(1, null, null, 1));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -276,7 +281,7 @@ public class HammerDescription extends javax.swing.JFrame {
                 .addContainerGap(41, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jSpinQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(142, 142, 142))
         );
         jPanel2Layout.setVerticalGroup(
@@ -303,7 +308,7 @@ public class HammerDescription extends javax.swing.JFrame {
                 .addGap(19, 19, 19)
                 .addComponent(btnAddToCart, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jSpinQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
@@ -340,7 +345,7 @@ public class HammerDescription extends javax.swing.JFrame {
 
     private void btnCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartActionPerformed
         // TODO add your handling code here:
-         if (btnLogin.isVisible()){
+        if (btnLogin.isVisible()){
            Cart c =new Cart();
            c.setVisible(true);
            setVisible(false); 
@@ -350,11 +355,25 @@ public class HammerDescription extends javax.swing.JFrame {
            c.setVisible(true);
            setVisible(false);
         }
+        
     }//GEN-LAST:event_btnCartActionPerformed
 
     private void btnAddToCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddToCartActionPerformed
         // TODO add your handling code here:
-        
+        try {
+            String productName = lblName.getText();
+            String price = (lblPrice.getText()).substring(1,(lblPrice.getText()).length());
+            int quantity = (Integer)jSpinQuantity.getValue();
+            int total = Integer. parseInt(price)*quantity;
+            
+            MyConnector mcon = new MyConnector();
+            Connection con = mcon.connectionMaker();
+            String sql = "INSERT INTO NewCart ([Product ID], [Quantity], [Price], [Total]) VALUES ('"+productName+"','"+price+"', '"+quantity+"', '"+total+"' )";       
+            PreparedStatement stmt = con.prepareStatement(sql);
+            stmt.executeUpdate();            
+            
+        } catch (Exception e) {e.getLocalizedMessage();}
+                   
     }//GEN-LAST:event_btnAddToCartActionPerformed
 
     /**
@@ -412,7 +431,7 @@ public class HammerDescription extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JSpinner jSpinQuantity;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblDescription;
     private javax.swing.JLabel lblHammerpic;
