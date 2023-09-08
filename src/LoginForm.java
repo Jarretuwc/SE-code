@@ -2,6 +2,7 @@
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import javax.management.relation.Role;
 import javax.swing.JOptionPane;
 
 
@@ -22,21 +23,24 @@ public class LoginForm extends javax.swing.JFrame {
     public LoginForm() {
         initComponents();
     }
+    //Searches the database for the login credentials of the user and checks if they are valid
     public Boolean authenticateUser(){
     String checkuser = "";
     String checkpass = "";
+    String role = "";
     String inputuser = tfEmail.getText();
     String inputpass = String.valueOf(tfPassword.getPassword());
     try {
         MyConnector mcon = new MyConnector();
         Connection con = mcon.connectionMaker();
-        PreparedStatement stmt = con.prepareStatement("SELECT Email, Password FROM Users where Email = ?");
+        PreparedStatement stmt = con.prepareStatement("SELECT Email, Password, Role FROM Users where Email = ?");
         stmt.setString(1, inputuser);
         ResultSet rs;
         rs = stmt.executeQuery();
         while (rs.next()) {            
             checkuser = rs.getString(1);
             checkpass = rs.getString(2);
+            role = rs.getString(3);
         }
         rs.close();
         con.close();
@@ -45,6 +49,7 @@ public class LoginForm extends javax.swing.JFrame {
     if (checkuser.equals(inputuser)) {
         if (checkpass.equals(inputpass)) {
             JOptionPane.showMessageDialog(rootPane, "Authentication successful Welcome ");
+            setRole(role);
             return true;
         }
         else{
@@ -56,6 +61,13 @@ public class LoginForm extends javax.swing.JFrame {
         return false;
     }
 }   
+    private String role = "";
+    public String getRole(){
+        return role;
+    }
+    public void setRole(String newRole){
+        this.role = newRole;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -87,6 +99,8 @@ public class LoginForm extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel2.setText("Login");
+
+        tfEmail.setText("Nadyah@gmail.com");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel3.setText("Email");
@@ -126,6 +140,8 @@ public class LoginForm extends javax.swing.JFrame {
                 ckbPasswordActionPerformed(evt);
             }
         });
+
+        tfPassword.setText("123");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -206,10 +222,18 @@ public class LoginForm extends javax.swing.JFrame {
          lblVerification.setText("Missing Fields");
     }else{
         if (authenticateUser()) {
-            String user=tfEmail.getText();
-            Home h =new Home(user);
-            h.setVisible(true);
-            setVisible(false);
+            if (role.equals("Administrator")) {
+                String user= tfEmail.getText();
+                Admin a = new Admin(user);
+                a.setVisible(true);
+                setVisible(false);
+            } else {
+                String user= tfEmail.getText();
+                Home h =new Home(user);
+                h.setVisible(true);
+                setVisible(false);
+            }
+            
         }
          
          

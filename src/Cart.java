@@ -1,3 +1,12 @@
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import net.proteanit.sql.DbUtils;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -14,14 +23,31 @@ public class Cart extends javax.swing.JFrame {
      */
     public Cart() {
         initComponents();
+        pnlTable.setVisible(false);
     }
     public Cart(String user){
         initComponents();
         lblUser.setText(user);
         btnLogin.setVisible(false);
-        btnProfile.setVisible(false);
+        
     }
-
+    public void updateTable(){
+        Connection con;
+        MyConnector mcon = new MyConnector();
+        con = mcon.connectionMaker();
+        String sqlquery = "Select * from CartItems";
+        Statement stmt;
+        ResultSet rs;
+        try {
+            stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
+            rs = stmt.executeQuery(sqlquery);
+            tblCart.setModel(DbUtils.resultSetToTableModel(rs));
+            rs.close();
+            con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(Cart.class.getName()).log(Level.SEVERE, null, ex);
+        }       
+    }   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -41,6 +67,9 @@ public class Cart extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         lblMyCart = new javax.swing.JLabel();
         btnHome = new javax.swing.JButton();
+        pnlTable = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblCart = new javax.swing.JTable();
         jLabel69 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         lblEmotyCart = new javax.swing.JLabel();
@@ -139,6 +168,33 @@ public class Cart extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 70, 850, 60);
+
+        tblCart.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(tblCart);
+
+        javax.swing.GroupLayout pnlTableLayout = new javax.swing.GroupLayout(pnlTable);
+        pnlTable.setLayout(pnlTableLayout);
+        pnlTableLayout.setHorizontalGroup(
+            pnlTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 850, Short.MAX_VALUE)
+        );
+        pnlTableLayout.setVerticalGroup(
+            pnlTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(pnlTable);
+        pnlTable.setBounds(0, 130, 850, 370);
 
         jLabel69.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ContactDetails.png"))); // NOI18N
         getContentPane().add(jLabel69);
@@ -272,11 +328,14 @@ public class Cart extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblEmotyCart;
     private javax.swing.JLabel lblEmptyCart1;
     private javax.swing.JLabel lblEmptyCart2;
     private javax.swing.JLabel lblMyCart;
     private javax.swing.JLabel lblUser;
+    private javax.swing.JPanel pnlTable;
+    private javax.swing.JTable tblCart;
     // End of variables declaration//GEN-END:variables
 }

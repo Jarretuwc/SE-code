@@ -117,7 +117,7 @@
     <Component class="javax.swing.JLabel" name="lblUser">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="18" style="1"/>
+          <Font name="Segoe UI" size="12" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="cc" type="rgb"/>
@@ -463,8 +463,11 @@
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/dewalt_brushless_hammer_drill_R4150_179x180.jpg"/>
                     </Property>
-                    <Property name="name" type="java.lang.String" value="ewalt_brushless_hammer_drill_R4150_179x180.jpg" noResource="true"/>
+                    <Property name="name" type="java.lang.String" value="Dewalt_brushless_hammer_drill_R4150_179x180.jpg" noResource="true"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblDrill1_picMouseClicked"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblDrill1_name">
                   <Properties>
@@ -500,14 +503,14 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel19" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel18" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblHammer3_price" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblHammer3_name" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="54" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                          <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblHammer3_pic" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -516,26 +519,29 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblHammer3_pic" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblHammer3_name" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblHammer3_price" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="27" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel13">
+                <Component class="javax.swing.JLabel" name="lblHammer3_pic">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/Screenshot_2023-09-05_161147_179x180.png"/>
                     </Property>
                     <Property name="name" type="java.lang.String" value="Screenshot_2023-09-05_161147_179x180.png" noResource="true"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblHammer3_picMouseClicked"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel18">
+                <Component class="javax.swing.JLabel" name="lblHammer3_name">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -543,7 +549,7 @@
                     <Property name="text" type="java.lang.String" value="Grip Brick Chisel Hammer"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel19">
+                <Component class="javax.swing.JLabel" name="lblHammer3_price">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="18" style="1"/>
@@ -599,6 +605,9 @@
                     </Property>
                     <Property name="name" type="java.lang.String" value="milwaukee_hammer_R599_179x180.jpg" noResource="true"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblHammer2_picMouseClicked"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblHammer2_name">
                   <Properties>
@@ -686,8 +695,11 @@
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/CAT_Rotary-Hammer_1500W_R3495.00_1_179x180.png"/>
                     </Property>
-                    <Property name="name" type="java.lang.String" value="AT_Rotary-Hammer_1500W_R3495.00_1_179x180.png" noResource="true"/>
+                    <Property name="name" type="java.lang.String" value="CAT_Rotary-Hammer_1500W_R3495.00_1_179x180.png" noResource="true"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblDrill3_picMouseClicked"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblDrill3_name">
                   <Properties>
@@ -752,8 +764,11 @@
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/makita_impact_drill_710W_R1699.99_179x180.jpg"/>
                     </Property>
-                    <Property name="name" type="java.lang.String" value="akita_impact_drill_710W_R1699.99_179x180.jpg" noResource="true"/>
+                    <Property name="name" type="java.lang.String" value="Makita_impact_drill_710W_R1699.99_179x180.jpg" noResource="true"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblDrill2_picMouseClicked"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblDrill2_name">
                   <Properties>
@@ -817,8 +832,11 @@
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/Stahlwille_7pc_screwdriver_set_R1990.00_1_179x180.jpg"/>
                     </Property>
-                    <Property name="name" type="java.lang.String" value="tahlwille_7pc_screwdriver_set_R1990.00_1_179x180.jpg" noResource="true"/>
+                    <Property name="name" type="java.lang.String" value="Stahlwille_7pc_screwdriver_set_R1990.00_1_179x180.jpg" noResource="true"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblScrew1_picMouseClicked"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblScrew1_name">
                   <Properties>
@@ -882,8 +900,11 @@
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/stanley_stubby_multibit_screwdriver_R679.99_179x180.jpg"/>
                     </Property>
-                    <Property name="name" type="java.lang.String" value="tanley_stubby_multibit_screwdriver_R679.99_179x180.jpg" noResource="true"/>
+                    <Property name="name" type="java.lang.String" value="Stanley_stubby_multibit_screwdriver_R679.99_179x180.jpg" noResource="true"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblScrew2_picMouseClicked"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblScrew2_name">
                   <Properties>
@@ -954,8 +975,11 @@
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/milwaukee_8pc_screwdriver_set_R630_179x180.jpg"/>
                     </Property>
-                    <Property name="name" type="java.lang.String" value="ilwaukee_8pc_screwdriver_set_R630_179x180.jpg" noResource="true"/>
+                    <Property name="name" type="java.lang.String" value="Milwaukee_8pc_screwdriver_set_R630_179x180.jpg" noResource="true"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblScrew3_picMouseClicked"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblScrew3_name">
                   <Properties>
@@ -1019,8 +1043,11 @@
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/STAHLWILLE_COMBI_SPANNERS_R260_179x180.jpg"/>
                     </Property>
-                    <Property name="name" type="java.lang.String" value="TAHLWILLE_COMBI_SPANNERS_R260_179x180.jpg" noResource="true"/>
+                    <Property name="name" type="java.lang.String" value="STAHLWILLE_COMBI_SPANNERS_R260_179x180.jpg" noResource="true"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblSpanner1_picMouseClicked"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblSpanner1_name">
                   <Properties>
@@ -1084,8 +1111,11 @@
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/stanley_ratchet_spanner_R150_179x180.jpg"/>
                     </Property>
-                    <Property name="name" type="java.lang.String" value="tanley_ratchet_spanner_R150_179x180.jpg" noResource="true"/>
+                    <Property name="name" type="java.lang.String" value="Stanley_ratchet_spanner_R150_179x180.jpg" noResource="true"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblSpanner2_picMouseClicked"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblSpanner2_name">
                   <Properties>
@@ -1149,8 +1179,11 @@
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/Stahlwille_Tube_Spanner_Sets_R2080_179x180.jpg"/>
                     </Property>
-                    <Property name="name" type="java.lang.String" value="tahlwille_Tube_Spanner_Sets_R2080_179x180.jpg" noResource="true"/>
+                    <Property name="name" type="java.lang.String" value="Stahlwille_Tube_Spanner_Sets_R2080_179x180.jpg" noResource="true"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblSpanner3_picMouseClicked"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblSpanner3_name">
                   <Properties>
@@ -1214,8 +1247,11 @@
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/king_tony_long_nose_pliers_R290_179x180.jpg"/>
                     </Property>
-                    <Property name="name" type="java.lang.String" value="ing_tony_long_nose_pliers_R290_179x180.jpg" noResource="true"/>
+                    <Property name="name" type="java.lang.String" value="King_tony_long_nose_pliers_R290_179x180.jpg" noResource="true"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblPliers1_picMouseClicked"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblPliers1_name">
                   <Properties>
@@ -1279,8 +1315,11 @@
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/Stanley_Mini_side_cutters_100_R110_179x180.jpg"/>
                     </Property>
-                    <Property name="name" type="java.lang.String" value="tanley_Mini_side_cutters_100_R110_179x180.jpg" noResource="true"/>
+                    <Property name="name" type="java.lang.String" value="Stanley_Mini_side_cutters_100_R110_179x180.jpg" noResource="true"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblPliers2_picMouseClicked"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblPliers2_name">
                   <Properties>
@@ -1353,8 +1392,11 @@
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/ridgid_water_pump_pliers_R695_1_179x180.jpg"/>
                     </Property>
-                    <Property name="name" type="java.lang.String" value="idgid_water_pump_pliers_R695_1_179x180.jpg" noResource="true"/>
+                    <Property name="name" type="java.lang.String" value="Ridgid_water_pump_pliers_R695_1_179x180.jpg" noResource="true"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblPliers3_picMouseClicked"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel58">
                 </Component>
@@ -1392,8 +1434,8 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel60" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel45" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblBaN_name" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblBaN_pic" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel61" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="14" max="32767" attributes="0"/>
@@ -1404,9 +1446,9 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="jLabel45" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblBaN_pic" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel60" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblBaN_name" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel61" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="27" max="32767" attributes="0"/>
@@ -1415,15 +1457,18 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel45">
+                <Component class="javax.swing.JLabel" name="lblBaN_pic">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/Screenshot_2023-09-05_164900_179x180m1.png"/>
                     </Property>
-                    <Property name="name" type="java.lang.String" value="creenshot_2023-09-05_164900_179x180m1.png" noResource="true"/>
+                    <Property name="name" type="java.lang.String" value="Screenshot_2023-09-05_164900_179x180m1.png" noResource="true"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblBaN_picMouseClicked"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel60">
+                <Component class="javax.swing.JLabel" name="lblBaN_name">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -1458,8 +1503,8 @@
                           <EmptySpace pref="25" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel63" min="-2" pref="86" max="-2" attributes="0"/>
-                              <Component id="jLabel46" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel62" alignment="0" min="-2" pref="185" max="-2" attributes="0"/>
+                              <Component id="lblBaN2_pic" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblBaN2_name" alignment="0" min="-2" pref="185" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       </Group>
@@ -1469,9 +1514,9 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="jLabel46" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblBaN2_pic" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel62" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblBaN2_name" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel63" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="27" max="32767" attributes="0"/>
@@ -1480,15 +1525,18 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel46">
+                <Component class="javax.swing.JLabel" name="lblBaN2_pic">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/Screenshot_2023-09-05_164911_179x180m2.png"/>
                     </Property>
-                    <Property name="name" type="java.lang.String" value="creenshot_2023-09-05_164911_179x180m2.png" noResource="true"/>
+                    <Property name="name" type="java.lang.String" value="Screenshot_2023-09-05_164911_179x180m2.png" noResource="true"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblBaN2_picMouseClicked"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel62">
+                <Component class="javax.swing.JLabel" name="lblBaN2_name">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -1522,8 +1570,8 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace pref="31" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel47" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel64" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblBaN3_pic" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblBaN3_name" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel65" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
@@ -1534,9 +1582,9 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="jLabel47" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblBaN3_pic" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel64" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblBaN3_name" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel65" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="27" max="32767" attributes="0"/>
@@ -1545,15 +1593,18 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel47">
+                <Component class="javax.swing.JLabel" name="lblBaN3_pic">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/Screenshot_2023-09-05_164920_179x180m3.png"/>
                     </Property>
-                    <Property name="name" type="java.lang.String" value="creenshot_2023-09-05_164920_179x180m3.png" noResource="true"/>
+                    <Property name="name" type="java.lang.String" value="Screenshot_2023-09-05_164920_179x180m3.png" noResource="true"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblBaN3_picMouseClicked"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel64">
+                <Component class="javax.swing.JLabel" name="lblBaN3_name">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>

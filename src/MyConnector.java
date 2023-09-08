@@ -16,9 +16,10 @@ import java.util.logging.Logger;
  */
 public class MyConnector {
     Connection con;
+    //Establishes the connection to the Database and allows it to be called when needed in the other classes
     public MyConnector(){
         try {
-            con = DriverManager.getConnection ("jdbc:ucanaccess://BuiltDifferent_DB.accdb;memory=true");
+            con = DriverManager.getConnection ("jdbc:ucanaccess://BuiltDifferent_DB2.accdb;memory=true");
         } catch (SQLException ex) {
             Logger.getLogger(MyConnector.class.getName()).log(Level.SEVERE, null, ex);
         }
